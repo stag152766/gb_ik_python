@@ -2,9 +2,9 @@ a = int(input('Введите сторону треугольника а: '))
 b = int(input('Введите сторону треугольника b: '))
 c = int(input('Введите сторону треугольника c: '))
 
-if (a < b + c):
-    if (b < a + c):
-        if (c < a + b):
+if a < b + c:
+    if b < a + c:
+        if c < a + b:
             if a == b == c:
                 print("Треугольник равносторонний")
             elif a == b or b == c or a == c:
