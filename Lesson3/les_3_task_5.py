@@ -10,4 +10,4 @@ for i, item in enumerate(a):
     if item < 0 and item > mn:
         mn = item
         index = i
-print(f'{index}:{mn}')
+print(f'Максимальный отрицательный элемент: {mn} имеет позицию {index}')

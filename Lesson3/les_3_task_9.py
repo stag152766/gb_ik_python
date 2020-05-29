@@ -8,7 +8,7 @@ matrix = [[random.randint(0, 100) for _ in range(m)] for _ in range(n)]
 
 for line in matrix:
     print(line)
-print('-' * len(matrix) * 5)
+print()
 
 mx = -1
 
@@ -19,4 +19,4 @@ for j in range(m):
             mn = matrix[i][j]
     if mn > mx:
         mx = mn
-print(mx)
+print(f'Ответ: {mx}')
