@@ -9,17 +9,17 @@ m = 5
 n = 4
 b = []
 a = []
-s = 0
+sum = 0
 
 for i in range(n):
     print(f'{i}-я строка: ')
     for j in range(m-1):
-        u = int(input())
-        b.append(u)
-        s += u
-    b.append(s)
+        num = int(input())
+        b.append(num)
+        sum += num
+    b.append(sum)
     a.append(b)
-    s = 0
+    sum = 0
     b = []
 
 for i in a:

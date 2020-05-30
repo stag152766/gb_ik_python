@@ -3,7 +3,8 @@
 # (оба являться минимальными), так и различаться.
 import random
 
-a = [random.randint(-100, 100) for _ in range(10)]
+SIZE = 10
+a = [random.randint(-100, 100) for _ in range(SIZE)]
 print(a)
 
 mn = 0
@@ -21,3 +22,26 @@ for i in range(1, len(b)):
         mn_b = i
 
 print(f'второй минимальный: {b[mn_b]}')
+
+# Вариант 2
+
+# Предположим, что двумя наименьшими элементами массива являются первый и второй элемент.
+if a[0] > a[1]:
+    min_idx_1 = 0
+    min_idx_2 = 1
+else:
+    min_idx_1 = 1
+    min_idx_2 = 0
+
+for i in range(2, SIZE):
+    if a[i] < a[min_idx_1]:
+        spam = min_idx_1
+        min_idx_1 = i
+
+        if a[spam] < a[min_idx_2]:
+            min_idx_2 = spam
+
+    elif a[i] < a[min_idx_2]:
+        min_idx_2 = i
+print(f'Число {a[min_idx_1]} в ячейке {min_idx_1}')
+print(f'Число {a[min_idx_2]} в ячейке {min_idx_2}')

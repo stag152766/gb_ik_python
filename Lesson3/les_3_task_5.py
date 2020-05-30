@@ -1,13 +1,29 @@
 # 5. В массиве найти максимальный отрицательный элемент. Вывести на экран его значение и позицию в массиве.
 import random
 
-a = [random.randint(-100,100) for _ in range(20)]
+SIZE = 10
+a = [random.randint(-100, 100) for _ in range(SIZE)]
 print(a)
 
-mn = -9999999
-index = 0
+# вариант 1
+mn = float('-inf')
+index = -1
+
 for i, item in enumerate(a):
-    if item < 0 and item > mn:
+    if 0 > item > mn:
         mn = item
         index = i
-print(f'Максимальный отрицательный элемент: {mn} имеет позицию {index}')
+print(f'Число: {mn} на позиции {index}')
+
+# вариант 2
+i = 0
+index = -1
+
+while i < SIZE:
+    if a[i] < 0 and index == -1:
+        index = i
+    elif a[i] < 0 and a[i] > a[index]:
+        index = i
+    i += 1
+print(f'Число {a[index]} на позиции {index}')
+

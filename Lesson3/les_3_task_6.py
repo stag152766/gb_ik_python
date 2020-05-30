@@ -3,27 +3,25 @@
 # сумму не включать.
 import random
 
-a = [random.randint(-100, 100) for _ in range(10)]
+SIZE = 10
+a = [random.randint(-100, 100) for _ in range(SIZE)]
 print(a)
 
 mx = 0
 mn = 0
 
-for i in range(1, len(a)):
+for i in range(1, SIZE):
     if a[i] < a[mn]:
         mn = i
     elif a[i] > a[mx]:
         mx = i
 
+if mn > mx:
+    a[mn], a[mx] = a[mx], a[mn]
+
 sum = 0
 
-if mx > mn:
-    b = a[mn + 1:mx]
-    for i in b:
-        sum += i
+for i in range(mn + 1,mx):
+    sum += a[i]
 
-elif mn > mx:
-    b = a[mx + 1:mn]
-    for i in b:
-        sum += i
 print(f'Ответ: {sum}')
