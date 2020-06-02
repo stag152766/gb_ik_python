@@ -1,7 +1,9 @@
 # 4. Определить, какое число в массиве встречается чаще всего.
 import random
+import cProfile
 
-SIZE = 500
+
+SIZE = 10
 lst = [random.randint(0, 10) for _ in range(SIZE)]
 print(lst)
 
@@ -58,8 +60,8 @@ def func_3(a):
 
 
 func_1(lst)
-func_2(lst)
-func_3(lst)
+#func_2(lst)
+#func_3(lst)
 
 # len(list) = 10
 
@@ -85,3 +87,28 @@ func_3(lst)
 # 1000 loops, best of 5: 45.3 usec per loop
 
 # len(lst) = 500
+
+# "les_4_task_1.func_1(lst)"
+# 1000 loops, best of 5: 324 usec per loop
+
+# "les_4_task_1.func_2(lst)"
+# 1000 loops, best of 5: 21.4 msec per loop
+
+# "les_4_task_1.func_3(lst)"
+# 1000 loops, best of 5: 188 usec per loop
+
+# len(lst) = 1000
+
+# "les_4_task_1.func_1(lst)"
+# 1000 loops, best of 5: 635 usec per loop
+
+# "les_4_task_1.func_3(lst)"
+# 1000 loops, best of 5: 343 usec per loop
+
+cProfile.run('func_3(lst)')
+
+#  1    0.000    0.000    0.000    0.000 les_4_task_1.py:14(func_1) 10
+#  1    0.000    0.000    0.000    0.000 les_4_task_1.py:32(func_2) 10
+#  1    0.000    0.000    0.000    0.000 les_4_task_1.py:51(func_3) 10
+
+# Вывод: третий вариант в 2 раза быстрее первого и намного быстрее второго
