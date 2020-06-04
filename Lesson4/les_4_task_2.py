@@ -56,3 +56,5 @@ main(10)
 
 # "import les_4_task_2" "les_4_task_2.sieve(100)"
 # 1000 loops, best of 5: 40.3 usec per loop
+
+# Вывод решето Эратосфена быстре
