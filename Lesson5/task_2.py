@@ -65,6 +65,25 @@ print(deq)
 
 print('*' * 50)
 
-with open('log.txt', 'r', encoding='utf-8') as f:
-    last_ten = deque(f, 10)
+
+with open('big_log.txt', 'r', encoding='utf-8') as f:
+    last_ten = deque(f, maxlen=10)
 print(last_ten)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
