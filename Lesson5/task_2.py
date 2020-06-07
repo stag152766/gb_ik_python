@@ -1,5 +1,4 @@
 import random
-
 from collections import deque
 
 a = deque()
@@ -15,7 +14,7 @@ b = deque('abcdef', maxlen=3)
 c = deque([1, 2, 3, 4, 5], maxlen=4)
 print(b, c, sep='\n')
 
-# самое последнее в очередях - добавление элемента в начало или конец
+# самое важное в очередях - добавление элемента в начало или конец
 
 print('*' * 50)
 d = deque([i for i in range(5)], maxlen=7)
