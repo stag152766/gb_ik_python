@@ -17,7 +17,7 @@ for i in range(1, k + 1):
     enterprise = New_Enterprise(name, quarters, profit)
     enterprises.append(enterprise)
 
-print(enterprises)
+#print(enterprises)
 sum = 0
 for item in enterprises:
     sum += item.profit

@@ -11,3 +11,4 @@ while num != 0:
     s += str(num % 10)
     num //= 10
 print(f'Результат: {s}')
+
