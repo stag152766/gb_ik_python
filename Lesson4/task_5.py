@@ -43,6 +43,6 @@ def fib_list(n):
 # 1000 loops, best of 5: 494 usec per loop
 
 cProfile.run('fib_list(500)')
-# 19/1    0.000    0.000    0.000    0.000 task_5.py:15(_fib_list) 10
-# 199/1    0.000    0.000    0.000    0.000 task_5.py:15(_fib_list)
-# 999/1    0.001    0.000    0.001    0.001 task_5.py:15(_fib_list)
+# 19/1    0.000    0.000    0.000    0.000 task_4.py:15(_fib_list) 10
+# 199/1    0.000    0.000    0.000    0.000 task_4.py:15(_fib_list)
+# 999/1    0.001    0.000    0.001    0.001 task_4.py:15(_fib_list)
