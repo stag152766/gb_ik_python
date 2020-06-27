@@ -1,5 +1,6 @@
-# поиск кратчайшего пути Декстры
-# для взвешенного графа
+# Доработать алгоритм Дейкстры, чтобы он дополнительно
+# возвращал список вершин, которые необходимо обойти.
+from collections import defaultdict
 
 g = [
     [0, 0, 1, 1, 9, 0, 0, 0],
@@ -18,35 +19,31 @@ def dijkstra(graph, start):
     is_visited = [False] * length
     cost = [float('inf')] * length
     parent = [-1] * length
+    vertex_d = {}
 
     cost[start] = 0
-    min_cost = 0 # показывает двигаемся дальше по графу или нет
+    min_cost = 0
 
     while min_cost < float('inf'):
 
         is_visited[start] = True
 
-        # пройдемся по той строке, в которой хранится старт
-        # номер строки = номер вершины (старт)
         for i, vertex in enumerate(graph[start]):
-            # если у вершины есть ребро и вершину не посещали, то проверим расстояние
             if vertex != 0 and not is_visited[i]:
 
-                # если расстояниие
                 if cost[i] > vertex + cost[start]:
                     cost[i] = vertex + cost[start]
                     parent[i] = start
-
-                    # обошли все вершины и записали все минимальные расстояния до них
+                    print(parent)
 
         min_cost = float('inf')
-
-        # пройдем по всем вершинам графа
         for i in range(length):
             if min_cost > cost[i] and not is_visited[i]:
                 min_cost = cost[i]
                 start = i
-    # вернуть список стоимостей путей до каждой вершины
+                print(i, 'из', parent[i])
+                vertex_d[i] =[parent[i]]
+    print(vertex_d)
     return cost
 
 
