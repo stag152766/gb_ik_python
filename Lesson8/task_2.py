@@ -9,6 +9,7 @@ graph.append([0, 2, 3])
 graph.append([0, 1])
 graph.append([1])
 
+print(graph)
 print(*graph, sep='\n')
 # как проверить что из вершины 1 мы попадем в вершину 3?
 # - перебрать весь список

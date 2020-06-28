@@ -4,3 +4,15 @@
 # граф должен храниться в виде списка смежности;
 # генерация графа выполняется в отдельной функции, которая
 # принимает на вход число вершин.
+
+def graph(n):
+    graph = [[] for i in range(n)]
+    for i in range(n):
+        for j in range(n):
+            if i != j:
+                graph[i].append(j)
+
+    return graph
+
+
+print(graph(3))
