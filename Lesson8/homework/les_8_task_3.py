@@ -15,4 +15,22 @@ def graph(n):
     return graph
 
 
-print(graph(3))
+n = int(input('Ввидите количество вершин: '))
+graph = graph(n)
+print(graph)
+
+is_visited = [False] * n
+prev = [-1] * n
+
+
+def dfs(start, graph):
+    if not is_visited[start]:
+        is_visited[start] = True
+        prev[start] = start
+        for i in graph[start]:
+            dfs(i, graph)
+    return prev
+
+
+result = dfs(0, graph)
+print(result)
